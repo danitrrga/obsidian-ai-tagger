@@ -1,0 +1,16 @@
+# Build output
+main.js
+
+# Dependencies
+node_modules
+
+# Plugin data (contains API keys)
+data.json
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

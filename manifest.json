@@ -1,0 +1,10 @@
+{
+    "id": "ai-auto-tagger-plugin",
+    "name": "AI Obsidian Auto Tagger",
+    "version": "2.0.0",
+    "minAppVersion": "0.15.0",
+    "description": "Automatically suggest and add tags to your notes using AI based on content and available tags in your vault.",
+    "author": "Daniel Tárraga",
+    "authorUrl": "https://github.com/danitrrga",
+    "isDesktopOnly": false
+}

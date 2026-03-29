@@ -1,0 +1,146 @@
+/* AI Auto Tagger Plugin Styles */
+
+/* Modal Styling */
+.ai-auto-tagger-modal {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+}
+
+.ai-auto-tagger-modal h2 {
+  margin-top: 0;
+  color: var(--text-normal);
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.ai-auto-tagger-modal p {
+  margin-bottom: 16px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-size: 0.9em;
+}
+
+/* Tags Container */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+/* Tag Pills */
+.ai-tag-suggestion {
+  display: inline-block;
+  border-radius: 14px;
+  padding: 4px 12px;
+  font-size: 0.9em;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+
+.ai-tag-suggestion.ai-tag-selected {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.ai-tag-suggestion.ai-tag-selected:hover {
+  background-color: var(--interactive-accent-hover);
+  transform: translateY(-1px);
+}
+
+.ai-tag-suggestion.ai-tag-deselected {
+  background-color: var(--background-modifier-border);
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.ai-tag-suggestion.ai-tag-deselected:hover {
+  opacity: 0.8;
+}
+
+/* Button Container */
+.modal-button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+/* Buttons */
+.ai-auto-tagger-modal button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background-color: var(--interactive-normal);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.ai-auto-tagger-modal button:hover {
+  background-color: var(--interactive-hover);
+}
+
+.ai-auto-tagger-modal button.mod-cta {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border: 1px solid var(--interactive-accent);
+}
+
+.ai-auto-tagger-modal button.mod-cta:hover {
+  background-color: var(--interactive-accent-hover);
+}
+
+.ai-auto-tagger-modal button:disabled,
+.ai-auto-tagger-modal button.ai-btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Settings Tab */
+.ai-auto-tagger-settings h3 {
+  margin-top: 24px;
+  color: var(--text-normal);
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 8px;
+}
+
+.ai-auto-tagger-settings h3:first-child {
+  margin-top: 0;
+}
+
+.ai-auto-tagger-settings ol {
+  padding-left: 25px;
+  color: var(--text-normal);
+  line-height: 1.6;
+}
+
+.ai-auto-tagger-settings li {
+  margin-bottom: 6px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .ai-auto-tagger-modal {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .modal-button-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-auto-tagger-modal button {
+    width: 100%;
+  }
+}
