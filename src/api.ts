@@ -3,9 +3,9 @@ import type { TagResponse } from "./types";
 
 const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
 const MODELS = [
+	"qwen/qwen3-next-80b-a3b-instruct:free",
 	"nvidia/nemotron-3-super-120b-a12b:free",
 	"minimax/minimax-m2.5:free",
-	"nvidia/nemotron-3-nano-30b-a3b:free",
 ];
 const MAX_RETRIES = 2;
 const RETRY_DELAY_MS = 3000;
