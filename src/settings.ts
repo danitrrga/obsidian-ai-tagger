@@ -36,23 +36,21 @@ export class AIAutoTaggerSettingTab extends PluginSettingTab {
 		containerEl.createEl("h3", { text: "AI Configuration" });
 
 		new Setting(containerEl)
-			.setName("Qwen API key")
+			.setName("OpenRouter API key")
 			.setDesc(
 				createFragment((el) => {
-					el.appendText(
-						"Your Alibaba Cloud (DashScope) API key for Qwen. Get one at "
-					);
+					el.appendText("Your OpenRouter API key. Get one at ");
 					el.createEl("a", {
-						text: "dashscope.console.aliyun.com",
-						href: "https://dashscope.console.aliyun.com/",
+						text: "openrouter.ai/keys",
+						href: "https://openrouter.ai/keys",
 					});
 					el.appendText(
-						". The free tier includes 1 million tokens/month."
+						". The plugin uses free models — no charges apply."
 					);
 				})
 			)
 			.addText((text) => {
-				text.setPlaceholder("sk-...")
+				text.setPlaceholder("sk-or-v1-...")
 					.setValue(this.plugin.settings.openRouterApiKey)
 					.onChange(async (value) => {
 						this.plugin.settings.openRouterApiKey = value;
@@ -102,7 +100,7 @@ export class AIAutoTaggerSettingTab extends PluginSettingTab {
 		const steps = [
 			'Set the "Tags folder path" to a folder in your vault containing tag files.',
 			"Each file in that folder represents a tag (e.g., project-alpha.md, meeting-notes.md).",
-			"Add your Qwen (DashScope) API key above.",
+			"Add your OpenRouter API key above.",
 			"Open a note and click the tag icon in the left ribbon, or use the command palette: \"Run AI Auto Tagger\".",
 			"Review the suggested tags and confirm to add them to your note.",
 		];
@@ -115,7 +113,7 @@ export class AIAutoTaggerSettingTab extends PluginSettingTab {
 		note.style.color = "var(--text-muted)";
 		note.style.fontSize = "0.85em";
 		note.setText(
-			"Model: Qwen Turbo via DashScope (free tier). Tags are selected only from your existing tag files — the AI will never create new tags."
+			"Uses free models via OpenRouter (Nemotron, MiniMax). Tags are selected only from your existing tag files — the AI will never create new tags."
 		);
 	}
 }

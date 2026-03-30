@@ -41,7 +41,7 @@ export default class AIAutoTaggerPlugin extends Plugin {
 		// Validate settings early
 		if (!this.settings.openRouterApiKey) {
 			new Notice(
-				"Qwen API key not configured. Open plugin settings to add it.",
+				"OpenRouter API key not configured. Open plugin settings to add it.",
 				5000
 			);
 			return;
