@@ -8,6 +8,7 @@ import { getAvailableTags, insertTagsIntoFile } from "./tagger";
 
 export default class AIAutoTaggerPlugin extends Plugin {
 	settings: AIAutoTaggerSettings = DEFAULT_SETTINGS;
+	private isProcessing = false;
 
 	async onload(): Promise<void> {
 		await this.loadSettings();
@@ -26,6 +27,11 @@ export default class AIAutoTaggerPlugin extends Plugin {
 	}
 
 	async handleTagging(): Promise<void> {
+		if (this.isProcessing) {
+			new Notice("Already analyzing — please wait.", 3000);
+			return;
+		}
+
 		const activeFile = this.app.workspace.getActiveFile();
 		if (!activeFile) {
 			new Notice("No active file. Open a note first.");
@@ -67,6 +73,7 @@ export default class AIAutoTaggerPlugin extends Plugin {
 		const fileContent = await this.app.vault.read(activeFile);
 
 		// Show processing indicator
+		this.isProcessing = true;
 		const processingNotice = new Notice(
 			"Analyzing document and suggesting tags...",
 			0
@@ -99,6 +106,8 @@ export default class AIAutoTaggerPlugin extends Plugin {
 				"An unexpected error occurred while generating tags.",
 				5000
 			);
+		} finally {
+			this.isProcessing = false;
 		}
 	}
 
