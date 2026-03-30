@@ -3,7 +3,7 @@ import { DEFAULT_SETTINGS } from "./types";
 import type { AIAutoTaggerSettings } from "./types";
 import { AIAutoTaggerSettingTab } from "./settings";
 import { TagConfirmationModal } from "./modals";
-import { fetchTagsFromOpenRouter } from "./api";
+import { fetchTags } from "./api";
 import { getAvailableTags, insertTagsIntoFile } from "./tagger";
 
 export default class AIAutoTaggerPlugin extends Plugin {
@@ -41,7 +41,7 @@ export default class AIAutoTaggerPlugin extends Plugin {
 		// Validate settings early
 		if (!this.settings.openRouterApiKey) {
 			new Notice(
-				"OpenRouter API key not configured. Open plugin settings to add it.",
+				"Qwen API key not configured. Open plugin settings to add it.",
 				5000
 			);
 			return;
@@ -80,7 +80,7 @@ export default class AIAutoTaggerPlugin extends Plugin {
 		);
 
 		try {
-			const response = await fetchTagsFromOpenRouter(
+			const response = await fetchTags(
 				this.settings.openRouterApiKey,
 				fileContent,
 				availableTags,
