@@ -113,7 +113,7 @@ export class AIAutoTaggerSettingTab extends PluginSettingTab {
 		note.style.color = "var(--text-muted)";
 		note.style.fontSize = "0.85em";
 		note.setText(
-			"Model: qwen/qwen3-next-80b-a3b-instruct:free via OpenRouter. Tags are selected only from your existing tag files — the AI will never create new tags."
+			"Model: nvidia/nemotron-3-super-120b via OpenRouter (free). Tags are selected only from your existing tag files — the AI will never create new tags."
 		);
 	}
 }

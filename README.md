@@ -4,7 +4,7 @@ Automatically suggest and add tags to your Obsidian notes using AI. The plugin a
 
 ## Features
 
-- **AI-powered tagging** — Uses the free Qwen3 model via OpenRouter to analyze note content
+- **AI-powered tagging** — Uses free models via OpenRouter (Nemotron, MiniMax) to analyze note content
 - **Strict tag validation** — Only suggests tags from your existing tag files, never creates new ones
 - **Interactive tag selection** — Review suggestions in a modal and toggle individual tags before applying
 - **Auto-insert mode** — Optionally skip the confirmation dialog for faster workflows
@@ -16,7 +16,7 @@ Automatically suggest and add tags to your Obsidian notes using AI. The plugin a
 
 1. Go to [openrouter.ai/keys](https://openrouter.ai/keys)
 2. Create a free account and generate an API key
-3. The plugin uses the free `qwen/qwen3-next-80b-a3b-instruct:free` model — no charges apply
+3. The plugin uses free models (e.g., `nvidia/nemotron-3-super-120b-a12b:free`) — no charges apply
 
 ### 2. Prepare your tags folder
 
